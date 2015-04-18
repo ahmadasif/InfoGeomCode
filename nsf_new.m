@@ -4,6 +4,9 @@ function [nsfMean, nsfVar] = nsf_new(timeSeries)
 % This function produces a measure of non-spectral flatness. Input is
 % a vector of time series data. Output is nsf measure and uncertainty - variance.
 
+% Comment added by AA to test that git is working correctly
+
+
 MIN_LENGTH = 64; %minimum length for the psd estimator
 
 % standardize data
