@@ -15,12 +15,12 @@ MIN_LENGTH = 64; %minimum length for the psd estimator
 %nfft = 64;
 nfft = ceil(2*length(timeSeries)^(1/3)); % use the Rice rule for number of histo bins
 
-if (length(stdTimeSeries) < MIN_LENGTH)
-  stdTimeSeries = [stdTimeSeries ; stdTimeSeries];
+if (length(timeSeries) < MIN_LENGTH)
+  timeSeries = [timeSeries ; timeSeries];
 end;
 
 Fs = 1; %arbitrary samp freq
-S = psd(spectrum.welch,stdTimeSeries,'Fs',Fs,'NFFT',nfft,'ConfLevel',0.841,'SpectrumType','Onesided'); %0.841 is the 1sd quantile
+S = psd(spectrum.welch,timeSeries,'Fs',Fs,'NFFT',nfft,'ConfLevel',0.841,'SpectrumType','Onesided'); %0.841 is the 1sd quantile
 
 %Nfft = 512;
 % [P,F,Pul] = pwelch(stdTimeSeries,[],[],Nfft,Fs,'ConfidenceLevel',0.841);
