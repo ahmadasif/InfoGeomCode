@@ -9,8 +9,8 @@ function [nsfMean, nsfVar] = nsf_new(timeSeries)
 
 MIN_LENGTH = 64; %minimum length for the psd estimator
 
-% standardize data
-stdTimeSeries = (timeSeries-mean(timeSeries))/std(timeSeries); %normalised affine xform
+% standardize data (AA removed this so if necessary, call routine with std-ized data)
+%stdTimeSeries = (timeSeries-mean(timeSeries))/std(timeSeries); %normalised affine xform
 
 %nfft = 64;
 nfft = ceil(2*length(timeSeries)^(1/3)); % use the Rice rule for number of histo bins
